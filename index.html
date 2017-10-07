@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>My Page</title>
 
-
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
@@ -15,79 +14,52 @@
             <button class="add-good-area-button" data-tooltip="Add">Додати</button>
 
         </div>
-        <div class="bl-list-row">
-            <div class="bl-list-row-product">
-                Помідори
-            </div>
-            <div class="bl-list-row-count">
-                <button class="bl-list-row-count-minus" data-tooltip="Minus">&#10134</button>
-                <span class="bl-list-row-count-label">1</span>
-                <button class="bl-list-row-count-plus" data-tooltip="Plus">&#10010</button>
-            </div>
-            <div class="bl-list-row-buttons">
-                <button class="bl-list-row-buttons-bought-button" data-tooltip="Bought">Куплено</button>
-                <button class="bl-list-row-buttons-cross-button" data-tooltip="Delete">&#10006</button>
-            </div>
-        </div>
-
-        <div class="bl-list-row">
-            <div class="bl-list-row-product">
-                Печиво
-            </div>
-            <div class="bl-list-row-count">
-                <button class="bl-list-row-count-minus" data-tooltip="Minus">&#10134</button>
-                <span class="bl-list-row-count-label">1</span>
-                <button class="bl-list-row-count-plus" data-tooltip="Plus">&#10010</button>
-            </div>
-            <div class="bl-list-row-buttons">
-                <button class="bl-list-row-buttons-bought-button" data-tooltip="Bought">Куплено</button>
-                <button class="bl-list-row-buttons-cross-button" data-tooltip="Delete">&#10006</button>
-            </div>
-        </div>
-
-        <div class="bl-list-row">
-            <div class="bl-list-row-product">
-                Сир
-            </div>
-            <div class="bl-list-row-count">
-                <button class="bl-list-row-count-minus" data-tooltip="Minus">&#10134</button>
-                <span class="bl-list-row-count-label">1</span>
-                <button class="bl-list-row-count-plus" data-tooltip="Plus">&#10010</button>
-            </div>
-            <div class="bl-list-row-buttons">
-                <button class="bl-list-row-buttons-bought-button" data-tooltip="Bought">Куплено</button>
-                <button class="bl-list-row-buttons-cross-button" data-tooltip="Delete">&#10006</button>
+        <div class="bl-row" style="display: none">
+            <div class="bl-list-row">
+                <div class="bl-list-row-product">
+                    Помідори
+                </div>
+                <input class="name-input" type="text" placeholder="Назва товару" style="display: none">
+                <div class="bl-list-row-count">
+                    <button class="bl-list-row-count-minus" data-tooltip="Minus">&#10134</button>
+                    <span class="bl-list-row-count-label">1</span>
+                    <button class="bl-list-row-count-plus" data-tooltip="Plus">&#10010</button>
+                </div>
+                <div class="bl-list-row-buttons">
+                    <button class="bl-list-row-buttons-bought-button" data-tooltip="Bought">Куплено</button>
+                    <button class="bl-list-row-buttons-cross-button" data-tooltip="Delete">&#10006</button>
+                    <button class="bl-list-row-buttons-unbuy-button" data-tooltip="Not bought">Не куплено</button>
+                </div>
             </div>
         </div>
     </div>
+
     <div class="bl-bought">
-        <div class="bl-segment">
+        <div class="bl-segment-text">
             <div class="bl-segment-text-area">Залишилося</div>
         </div>
-        <div class="bl-segment">
-            <div class="bl-segment-elements-area">
+
+        <div class="bl-segment-element">
+            <div class="bl-segment-elements-area" style="display: none">
                 <div class="bl-segment-elements-area-element">
                     <span class="bl-segment-elements-area-element-product">Помідори</span>
                     <span class="bl-segment-elements-area-element-number">1</span>
                 </div>
-                <div class="bl-segment-elements-area-element">
-                    <span class="bl-segment-elements-area-element-product">Печиво</span>
-                    <span class="bl-segment-elements-area-element-number">1</span>
-                </div>
-                <div class="bl-segment-elements-area-element">
-                    <span class="bl-segment-elements-area-element-product">Сир</span>
-                    <span class="bl-segment-elements-area-element-number">1</span>
-                </div>
             </div>
         </div>
 
-        <div class="bl-segment">
+        <div class="bl-segment-text">
             <div class="bl-segment-text-area">
                 Куплено
             </div>
         </div>
-        <div class="bl-segment">
-            <div class="bl-segment-elements-area"></div>
+        <div class="bl-segment-bought">
+            <div class="bl-segment-elements-area-bought" style="display: none">
+                <div class="bl-segment-elements-area-element-bought">
+                    <span class="bl-segment-elements-area-element-product">Помідори</span>
+                    <span class="bl-segment-elements-area-element-number">1</span>
+                </div>
+            </div>
         </div>
     </div>
     <div class="badge">
@@ -95,6 +67,9 @@
         <div class="created">Created by Linda4321</div>
     </div>
 </div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
 
 </body>
 </html>

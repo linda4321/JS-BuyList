@@ -2,7 +2,9 @@
     box-sizing: border-box;
 }
 
-.bl-list, .bl-bought, .add-good-area-button, .bl-list-row-buttons-bought-button, .bl-list-row-buttons-cross-button, .bl-list-row-count-label, .bl-segment-elements-area-element{
+.bl-list, .bl-bought, .add-good-area-button, .bl-list-row-buttons-bought-button, .bl-list-row-buttons-cross-button,
+.bl-list-row-count-label, .bl-segment-elements-area-element, .bl-segment-elements-area-element-bought, .bl-list-row-buttons-unbuy-button,
+.bl-segment-elements-area-element-bought{
     border-radius: 5px;
 }
 .bl-background {
@@ -26,7 +28,7 @@
 }
 
 /*row of item*/
-.bl-list-row, .add-good{
+.bl-list-row, .add-good, .bl-list-row-is-bought{
     width: 100%;
     border-top: 1px solid #cdcbcb;
     padding: 2%;
@@ -93,14 +95,15 @@
     padding-left: 15%;
 }
 /*Buttons "bought" і "х"*/
-.bl-list-row-buttons-bought-button, .bl-list-row-buttons-cross-button{
+.bl-list-row-buttons-bought-button, .bl-list-row-buttons-cross-button, .bl-list-row-buttons-unbuy-button{
     height: 30px;
     flex: 1 0 auto;
 }
 
-.bl-list-row-buttons-bought-button{
+.bl-list-row-buttons-bought-button, .bl-list-row-buttons-unbuy-button{
     width: 70%;
     font-family: Tahoma;
+
     font-size: 90%;
 }
 
@@ -110,26 +113,24 @@
     font-family: Tahoma;
 }
 
-.bl-segment{
+.bl-segment-text, .bl-segment-element, .bl-segment-bought{
     width: 100%;
-    padding: 2%;
+    padding: 5%;
     border-top: 1px solid #cdcbcb;
 }
 .bl-segment-text-area{
-    padding: 5%;
     font-family: Verdana;
     font-weight: 500;
     font-size: larger;
 }
-.bl-segment-elements-area{
-    padding: 2%;
-}
 
-.bl-segment-elements-area-element{
+.bl-segment-elements-area-element, .bl-segment-elements-area-element-bought{
     background: #cdcbcb;
     display: inline-block;
     padding: 5px;
-    margin-bottom: 2px;
+    /*margin-bottom: 2px;*/
+    margin: 2px;
+    /*margin-top: 2px;*/
     font-size: small;
 }
 
@@ -184,19 +185,21 @@ button{
 button::after{
     content: attr(data-tooltip);
     background: #c400ed;
+    width:0px;
     color:white;
     font-family: Tahoma;
-    font-size: 15px;
-    width:50px;
+    font-size: 0px;
     position: absolute;
     left:50%;
-    margin-left: -25px;
     border-radius: 5px;
     visibility: hidden;
     transition: all 2s ease;
 }
 
 button:hover::after{
+    width:50px;
+    font-size: 15px;
+    margin-left: -25px;
     visibility: visible;
     transform: translateY(-30px);
 }
@@ -224,4 +227,31 @@ button:hover::after{
         width: 100%;
         margin-left: 0;
     }
+}
+
+.name-input{
+    width: 20%;
+}
+
+.bl-list-row-buttons-unbuy-button{
+    display: none;
+}
+
+.bl-list-row-is-bought button{
+    display: none;
+}
+
+.bl-list-row-is-bought .bl-list-row-product{
+    pointer-events: none;
+}
+
+.bl-list-row-is-bought .bl-list-row-buttons-unbuy-button{
+    display: inline;
+}
+.bl-list-row-is-bought .bl-list-row-product{
+    text-decoration: line-through;
+}
+
+.bl-segment-elements-area-element-bought span{
+    text-decoration: line-through;
 }
